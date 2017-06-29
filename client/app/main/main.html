@@ -1,0 +1,44 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Ayla Json Configurations Provider</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Json Configurations List:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="config in $ctrl.configs">
+        <li>
+          <div>
+            <a ui-sref="configDetail({configId: config._id})">{{config.name}}</a>
+            <button type="button" class="close" ng-click="$ctrl.deleteConfig(config)">&times;</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="config-form">
+    <label>
+      Configuration Name:
+      <input ng-required="true" id='name' type="text" class="form-control" placeholder="Configuration Name"
+             ng-model="$ctrl.newConfigName">
+    </label>
+    <label for="config">
+      JSON Configuration:
+      <input ng-required="true" id='config' type="text" class="form-control" placeholder="Configuration"
+             ng-model="$ctrl.newConfig">
+    </label>
+    <label for="publicConfig">
+      Is it public?:
+      <select name="publicConfig" id="publicConfig" ng-model="$ctrl.publicConfig">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+
+    </label>
+
+    <button type="submit" class="btn btn-primary" ng-click="$ctrl.addConfig()">Add New Configuration</button>
+  </form>
+</div>
