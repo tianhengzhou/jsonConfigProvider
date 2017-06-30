@@ -7,7 +7,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/jsonconfigprovider-dev'
+    uri: 'mongodb://ec2-54-144-47-102.compute-1.amazonaws.com/jsonconfigprovider-dev'
   },
 
   // Seed database on startup

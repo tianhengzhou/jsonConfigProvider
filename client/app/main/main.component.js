@@ -8,7 +8,7 @@ export class MainController {
   configs = [];
   newConfig = '';
   newConfigName = '';
-  publicONly = false;
+  publicConfig = false;
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
